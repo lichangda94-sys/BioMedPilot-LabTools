@@ -1,0 +1,115 @@
+name: Lab calculator request
+description: Request a new or improved laboratory calculator.
+title: "[Calculator]: "
+labels:
+  - calculator
+  - research-feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for calculator ideas that can be implemented as transparent, testable, human-reviewed LabTools logic.
+
+        Please provide only non-confidential examples. Do not include patient data, private laboratory records, unpublished proprietary protocols, credentials, or secrets.
+
+  - type: checkboxes
+    id: safety-check
+    attributes:
+      label: Safety and scope checklist
+      options:
+        - label: This calculator is for biomedical research assistance, education, or laboratory workflow support.
+          required: true
+        - label: This calculator is not for clinical diagnosis, treatment decisions, patient management, or regulated medical use.
+          required: true
+        - label: I understand that formulas and outputs must be reviewed by a qualified human before laboratory use.
+          required: true
+
+  - type: input
+    id: calculator-name
+    attributes:
+      label: Calculator name
+      placeholder: Example: Primer dilution calculator
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Concentration / dilution
+        - Solution preparation
+        - Reagent templates
+        - Western Blot
+        - BCA assay
+        - SDS-PAGE
+        - PCR / qPCR
+        - ELISA / absorbance
+        - Cell culture
+        - Unit conversion
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What laboratory task does this calculator support?
+      placeholder: Describe the practical workflow.
+    validations:
+      required: true
+
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Inputs
+      description: List required input fields, units, and valid ranges if known.
+      placeholder: |
+        - Stock concentration:
+        - Target concentration:
+        - Final volume:
+    validations:
+      required: true
+
+  - type: textarea
+    id: outputs
+    attributes:
+      label: Outputs
+      description: List expected outputs and units.
+      placeholder: |
+        - Stock volume:
+        - Diluent volume:
+        - Warnings:
+    validations:
+      required: true
+
+  - type: textarea
+    id: formula
+    attributes:
+      label: Formula and assumptions
+      description: Include formulas, variable definitions, unit assumptions, and limitations.
+      placeholder: |
+        Formula:
+        Variables:
+        Units:
+        Assumptions:
+        Limitations:
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Non-confidential example calculation
+      description: Provide one safe example input/output pair if possible.
+    validations:
+      required: false
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and warning rules
+      description: What invalid inputs or review warnings should the calculator handle?
+    validations:
+      required: false

@@ -1,0 +1,104 @@
+name: Bug report
+description: Report a reproducible problem in BioMedPilot-LabTools.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Please use non-confidential example values only.
+
+        BioMedPilot-LabTools is not for clinical diagnosis, treatment decisions, patient management, or regulated medical use.
+
+  - type: checkboxes
+    id: safety-check
+    attributes:
+      label: Safety and privacy checklist
+      options:
+        - label: I confirm this report does not include patient data, private laboratory records, credentials, API keys, tokens, or confidential protocols.
+          required: true
+        - label: I understand that all LabTools outputs require human review before laboratory use.
+          required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+      placeholder: Describe the problem clearly.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - General calculators
+        - Concentration calculation
+        - Dilution calculation
+        - Solution preparation
+        - Calculation records
+        - Reagent templates
+        - Western Blot loading calculator
+        - Western Blot protein loading helpers
+        - BCA assay helper
+        - SDS-PAGE gel template helper
+        - qPCR mix calculator
+        - Cell seeding calculator
+        - Unit conversion
+        - Documentation
+        - Packaging or smoke test
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reproducible example you can share safely.
+      placeholder: |
+        1. Import or call...
+        2. Use inputs...
+        3. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What should happen instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: What actually happened? Include error messages if useful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include only non-sensitive environment details.
+      value: |
+        - OS:
+        - Python version:
+        - BioMedPilot-LabTools version or commit:
+        - Installation method:
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Add formula references, safe sample inputs, or related observations.
+    validations:
+      required: false

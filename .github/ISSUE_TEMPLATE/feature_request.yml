@@ -1,0 +1,79 @@
+name: Feature request
+description: Suggest a public package improvement for BioMedPilot-LabTools.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for public, non-confidential feature ideas.
+
+        Do not request clinical diagnosis, treatment decision support, regulated medical use, private BioMedPilot modules, payment, membership, license-server, private prompt, or cloud service features here.
+
+  - type: checkboxes
+    id: scope-check
+    attributes:
+      label: Scope checklist
+      options:
+        - label: This request is for the open-source LabTools package, not private BioMedPilot application services.
+          required: true
+        - label: This request does not include patient data, credentials, private records, or confidential protocols.
+          required: true
+        - label: I understand that LabTools results require human review before laboratory use.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or workflow need
+      description: What public research or laboratory workflow problem would this solve?
+      placeholder: Describe the workflow gap.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed feature
+      description: Describe the feature in practical terms.
+      placeholder: What should be added or improved?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Related area
+      options:
+        - General calculators
+        - Reagent templates
+        - Western Blot
+        - BCA assay
+        - SDS-PAGE
+        - PCR / qPCR
+        - ELISA / absorbance
+        - Cell culture
+        - Documentation
+        - Testing
+        - Public API
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: formula
+    attributes:
+      label: Formula, assumptions, or references
+      description: If the feature uses a formula, include variables, units, assumptions, and non-confidential references.
+      placeholder: Formula, units, assumptions, references, limitations.
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Suggested acceptance criteria
+      placeholder: How should maintainers know this feature works?
+    validations:
+      required: false
